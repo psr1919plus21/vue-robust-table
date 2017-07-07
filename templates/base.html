@@ -1,8 +1,12 @@
+{% load static %}
+
 <html>
 <head>
   {% block head %}{% endblock %}
 </head>
 <body>
     {% block content %}{% endblock %}
+
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
 </body>
 </html>

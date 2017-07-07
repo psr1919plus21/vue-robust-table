@@ -53,4 +53,11 @@ gulp.task('img', function() {
     .pipe(gulp.dest('./build/img'));
 });
 
-gulp.task('default', ['sass', 'js', 'img']);
+gulp.task('replace-static', function() {
+  gulp.src('./build/**')
+  .pipe(gulp.dest('../foo/static'));
+});
+
+gulp.task('default', ['sass', 'js', 'img'], function() {
+  gulp.run('replace-static');
+});
