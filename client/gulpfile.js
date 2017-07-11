@@ -8,18 +8,23 @@ var glob = require('glob');
 var es = require('event-stream');
 var imagemin = require('gulp-imagemin');
 
-gulp.task('sass', function () {
+gulp.task('sass:compile', function () {
   return gulp.src('./src/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(flatten())
     .pipe(gulp.dest('./build/css/'));
 });
 
-gulp.task('sass:watch', function () {
-  gulp.watch('./src/**/*.scss', ['sass']);
+gulp.task('sass:watch', ['css:replace'], function () {
+  gulp.watch('./src/**/*.scss', ['css:replace']);
 });
 
-gulp.task('js', function(done) {
+gulp.task('css:replace', ['sass:compile'], function() {
+  gulp.src('./build/css/**')
+  .pipe(gulp.dest('../foo/static/css'));
+});
+
+gulp.task('js:compile', function(done) {
     glob('./src/app/*.js', function(err, files) {
         if(err) done(err);
 
@@ -39,8 +44,13 @@ gulp.task('js', function(done) {
   });
 });
 
-gulp.task('js:watch', function() {
-  gulp.watch('./src/app/**/*.js', ['js']);
+gulp.task('js:watch', ['js:replace'], function() {
+  gulp.watch('./src/app/**/*.js', ['js:replace']);
+});
+
+gulp.task('js:replace', ['js:compile'], function() {
+  gulp.src('./build/js/**')
+  .pipe(gulp.dest('../foo/static/js'));
 });
 
 gulp.task('img', function() {
@@ -53,11 +63,15 @@ gulp.task('img', function() {
     .pipe(gulp.dest('./build/img'));
 });
 
+
+
 gulp.task('replace-static', function() {
   gulp.src('./build/**')
   .pipe(gulp.dest('../foo/static'));
 });
 
-gulp.task('default', ['sass', 'js', 'img'], function() {
+gulp.task('watch', ['sass:watch', 'js:watch']);
+
+gulp.task('default', ['sass:compile', 'js:compile', 'img'], function() {
   gulp.run('replace-static');
 });

@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "node_modules/.bin/gulp",
+    "dev": "node_modules/.bin/gulp watch",
+    "sass:compile": "node_modules/.bin/gulp css:replace",
     "sass:watch": "node_modules/.bin/gulp sass:watch",
+    "js:compile": "node_modules/.bin/gulp js:compile",
+    "js:watch": "node_modules/.bin/gulp js:watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "fil",

@@ -7,6 +7,6 @@ if (document.readyState === 'complete' || document.readyState !== 'loading') {
 function criticalCodeInint() {
   var cats = document.querySelectorAll('.cat');
   cats.forEach((cat) => {
-    cat.style.borderRadius = '20%';
+    cat.style.borderRadius = '30%';
   });
 }
