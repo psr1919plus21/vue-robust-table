@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  {% include 'common/head.html' with title="Index page" %}
+{% endblock %}
 
 {% block content %}
-<h1>Index</h1>
+  <center>
+    <h1>Main page</h1>
+    <h2 class="critical-class">Critical styles make this red</h2>
+    <img class="cat" src="{% static 'img/cat.jpg' %}" alt="cat">
+    <p>Critical script set border-radius for cat.</p>
+    <div><a href="about">another page</a></div>
+  </center>
+
+  <script src="{% static 'js/vendors.js' %}"></script>
+  <script src="{% static 'js/mainPage.js' %}"></script>
 {% endblock %}

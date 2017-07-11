@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder ".", "/vagrant", disabled: true
   if SYNC_FOLDER then
     if ENV['CI_FLAG'] then
-      config.vm.synced_folder ".", "/home/vagrant/proj", "type": "rsync"
+      config.vm.synced_folder ".", "/home/vagrant/proj", type: "rsync"
     elsif ENV['NO_NFS'] then
       config.vm.synced_folder ".", "/home/vagrant/proj"
     else
