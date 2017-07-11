@@ -20,6 +20,7 @@ VARS = dict(
     # dirs configs
     templates_dir='./provision/templates',
     root_dir='/home/vagrant/proj',
+    client_dir='/home/vagrant/proj/client',
     venv_path='/home/vagrant/venv',
     base_dir='/home/vagrant',
 
@@ -76,27 +77,7 @@ def apt_packages():
 def python_packages():
     """ Install python components """
 
-    sudo('apt-get -y install python-dev python-pip python-virtualenv build-essential '
-         'libncurses5-dev libncursesw5-dev libreadline6-dev libgdbm-dev libsqlite3-dev '
-         'libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libxml2-dev libxslt1-dev')
-
-    with cd('/tmp'):
-        # download python source code
-        run('wget -O python.tgz https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz')
-        # extract python tarball
-        run('tar -xf python.tgz')
-        run('mv Python-3.5.1 python')
-
-    with cd('/tmp/python'):
-        # configuring python 3.4 Makefile
-        run('./configure --prefix=/usr/local/python-3.5.1')
-        # compiling the python 3.4 source code and install
-        run('make')
-        sudo('make altinstall')
-    sudo('rm /tmp/* -rf')
-    # make link to python
-    sudo('ln -sf /usr/local/python-3.5.1/bin/* /usr/local/bin/')
-
+    sudo('apt-get -y install python-dev python-pip python-virtualenv build-essential python3')
 
 
 def nginx():
@@ -132,7 +113,7 @@ def app():
     """ Run application tasks """
     with cd(VARS['root_dir']):
         # Create venv and install requirements
-        run('pyvenv-3.5 {venv_path}'.format(**VARS))
+        run('python3.4 -m virtualenv -p /usr/bin/python3.4 {venv_path}'.format(**VARS))
         # Install required python packages with pip from wheels archive
         # make wheels for python packages for first running
         if not fabric.contrib.files.exists(os.path.join(VARS['root_dir'], 'wheels')):
@@ -172,3 +153,12 @@ def localserver():
         run('make start', pty=False)
 
 
+def frontend():
+    with cd('/tmp'):
+        run('wget https://deb.nodesource.com/setup_6.x')
+        sudo('bash setup_6.x')
+        sudo('apt-get install -y nodejs')
+        sudo('npm install -g npm@latest')
+    with cd(VARS['client_dir']):
+        run('npm i')
+        run('npm run build')

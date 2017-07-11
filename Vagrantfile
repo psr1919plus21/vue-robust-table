@@ -63,6 +63,7 @@ Vagrant.configure(2) do |config|
       "database",
       "nginx",
       "app",
+      "frontend",
     ]
     fabric.tasks.push("localserver") unless ENV['CI_FLAG']
   end
