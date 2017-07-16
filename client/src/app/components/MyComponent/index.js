@@ -1,18 +1,29 @@
-export default class MyClass {
-  constructor() {
-    this._getCounter = 0;
-    this._setCounter = 0;
-    this._foo = 'bar';
-  }
+import template from './MyComponentTpl';
 
-  get foo() {
-    return this._foo;
-
+Vue.component('my-component', {
+  template: template,
+  data: function() {
+    return {
+      todos: [
+        {val: 'Завести кота', completed: false},
+        {val: 'Погладить кота', completed: false},
+        {val: 'Покормить кота', completed: false}
+      ]
+    }
+  },
+  methods: {
+    complete: function (todo) {
+      todo.completed = !todo.completed
+    },
+    addTodo: function (e) {
+      let inputElement = e.target;
+      let todoText = inputElement.value;
+      if (!todoText) {
+        return;
+      }
+      this.todos.unshift({val: todoText, completed: false});
+      inputElement.setAttribute('placeholder', 'Добавить еще одну задачу');
+      inputElement.value = '';
+    }
   }
-
-  set foo(val) {
-    this._foo = val;
-    return this._foo;
-  }
-}
-console.log($);
+})

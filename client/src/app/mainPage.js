@@ -1,8 +1,11 @@
-import MyClass from './components/MyComponent';
+import './components/MyComponent';
 
-console.log('main page');
-console.log($);
-
-let myInstance = new MyClass;
-myInstance.foo = 'ololo';
-console.log(myInstance.foo);
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  },
+  mounted: function() {
+    this.$el.classList.remove('vue-app-preload');
+  }
+})
