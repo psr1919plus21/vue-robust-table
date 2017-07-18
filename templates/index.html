@@ -6,14 +6,29 @@
 {% endblock %}
 
 {% block content %}
-  <center>
-    <h1>Main page</h1>
-    <h2 class="critical-class">Critical styles make this red</h2>
-    <img class="cat" src="{% static 'img/cat.jpg' %}" alt="cat">
-    <p>Critical script set border-radius for cat.</p>
+  <center class="project-type">
+    <h1 class="project-type__title">Main page</h1>
+    <img class="project-type__img" src="{% static 'img/vue.png' %}" alt="vue">
+    <p>Vue project</p>
+    <p>This is static content from Django template.</p>
     <div><a href="about">another page</a></div>
-  </center>
+    <hr>
 
-  <script src="{% static 'js/vendors.js' %}"></script>
+    {% verbatim %}
+    <h3>Here is where Vue application starts.</h3>
+    <div class="vue-app-preload" id="app">
+      <p>{{ message }}</p>
+      <my-component></my-component>
+    </div>
+    {% endverbatim %}
+  </center>
+{% endblock %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static 'css/main-page.css' %}">
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/vendors.js' %}" ></script>
   <script src="{% static 'js/mainPage.js' %}"></script>
 {% endblock %}
