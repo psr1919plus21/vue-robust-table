@@ -1,13 +1,17 @@
-@import '_mixins';
-@import '_vars';
+@import 'mixins';
+@import 'vars';
+
+$color-preloader-bg: #f7f7f7;
+$color-preloader-border: #333;
+$color-preloader-gap: #999;
 
 body {
   background: $body-bg;
 }
 
 .project-type__img {
-  min-height: 400px;
   animation: flip 10000ms infinite;
+  min-height: 400px;
 }
 
 @-webkit-keyframes flip {
@@ -39,28 +43,28 @@ body {
 }
 
 .vue-app-preload {
-  color: transparent;
-  background: #f7f7f7;
+  background: $color-preloader-bg;
   border-radius: 8px;
+  color: transparent;
   height: 300px;
   position: relative;
   width: 100%;
 
   &:before {
-    content: '';
     animation: preloader 1000ms infinite;
+    border: 6px solid $color-preloader-border;
     border-radius: 50%;
+    border-right-color: $color-preloader-gap;
+    border-top-color: $color-preloader-gap;
+    bottom: 0;
+    content: '';
     height: 30px;
-    width: 30px;
-    border: 6px solid #333;
-    border-top-color: #999;
-    border-right-color: #999;
-    position: absolute;
     left: 0;
+    margin: auto;
+    position: absolute;
     right: 0;
     top: 0;
-    bottom: 0;
-    margin: auto;
+    width: 30px;
   }
 }
 

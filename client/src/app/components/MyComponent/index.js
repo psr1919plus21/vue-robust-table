@@ -1,3 +1,5 @@
+/* global Vue */
+
 import template from './MyComponentTpl';
 
 Vue.component('my-component', {

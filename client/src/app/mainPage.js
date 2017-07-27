@@ -1,6 +1,7 @@
+/* global Vue */
 import './components/MyComponent';
 
-var app = new Vue({
+new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue!'
