@@ -1,0 +1,27 @@
+
+$table-bg: #f4f4f7;
+$table-row-border: #373737;
+$cell-bg-hover: #cfe5f3;
+
+.vue-robust-table {
+  background: $table-bg;
+  border-collapse: collapse;
+  display: table;
+  width: 100%;
+}
+
+.vue-robust-table__row {
+  display: table-row;
+}
+
+.vue-robust-table__cell {
+  border: 1px solid $table-row-border;
+  cursor: pointer;
+  display: table-cell;
+  padding: 8px 16px;
+  transition: background 80ms;
+
+  &:hover {
+    background: $cell-bg-hover;
+  }
+}

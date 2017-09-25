@@ -7,18 +7,15 @@
 
 {% block content %}
   <center class="project-type">
-    <h1 class="project-type__title">Main page</h1>
+    <h1 class="project-type__title">vue-robust-table</h1>
     <img class="project-type__img" src="{% static 'img/vue.png' %}" alt="vue">
-    <p>Vue project</p>
-    <p>This is static content from Django template.</p>
-    <div><a href="about">another page</a></div>
-    <hr>
+    <p>Vue component for creation complex robust datatables.</p>
 
     {% verbatim %}
-    <h3>Here is where Vue application starts.</h3>
     <div class="vue-app-preload" id="app">
-      <p>{{ message }}</p>
-      <my-component></my-component>
+      <button @click="toggleHeader()">Toggle table header</button>
+      <hr>
+      <vue-robust-table :rows="dataTableRows" :show-table-header="dataTableSettings.tableHeader"></vue-robust-table>
     </div>
     {% endverbatim %}
   </center>
