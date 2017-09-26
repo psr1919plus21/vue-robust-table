@@ -17,7 +17,8 @@ export const template = `
             @dblclick.left="editModeEnable(row_index, cell_index)"
             @focus="cellOnFocus(row_index, cell_index)"
             @keyup.enter.self="editModeEnable(row_index, cell_index)">
-            <div v-show="!cell.editProcess" class="vue-robust-table__value"
+            <div class="vue-robust-table__value"
+              :class="{'vue-robust-table__value_hidden': cell.editProcess}"
               v-text="cell.value"></div>
             <div v-show="cell.editProcess" class="vue-robust-table__input-wrapper">
               <input
@@ -25,10 +26,10 @@ export const template = `
                 type="text"
                 class="vue-robust-table__input"
                 @keyup.enter="saveNewCellValue"
-                @blur="saveNewCellValue"
+
                 @keyup.esc="restoreOldCellValue">
             </div>
-
+<!-- @blur="saveNewCellValue" -->
           </div>
       </div>
 
