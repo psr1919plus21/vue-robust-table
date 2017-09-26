@@ -184,6 +184,485 @@ new Vue({
       }
     ],
 
+    dataTableRowsSecond: [
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+      {
+        state: 'active',
+        content: [
+          {
+            title: 'id',
+            value: 1
+          },
+          {
+            title: 'Режисер',
+            value: 'Тарантино'
+          },
+          {
+            title: 'Фильм',
+            value: 'От заката до рассвета'
+          },
+          {
+            title: 'год',
+            value: '2012'
+          },
+          {
+            title: 'оценка',
+            value: '5'
+          },
+          {
+            title: 'жанр',
+            value: 'фантастика, ужасы, боевик'
+          },
+          {
+            title: 'бюджет',
+            value: '$100000000'
+          },
+
+        ]
+      },
+    ],
+
     dataTableSettings: {
       tableHeader: true,
     }
