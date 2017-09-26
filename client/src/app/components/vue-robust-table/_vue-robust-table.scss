@@ -36,7 +36,9 @@ $grey-color: #969696;
   display: table-cell;
   height: 36px;
   max-width: 0;
+  overflow: hidden;
   padding: 8px 16px;
+  position: relative;
   transition: background 80ms;
   user-select: none;
 
@@ -65,18 +67,28 @@ $grey-color: #969696;
 }
 
 .vue-robust-table__cell_editprocess {
-  padding: 0;
+  // padding: 0;
+}
+
+.vue-robust-table__value_hidden {
+  visibility: hidden;
 }
 
 .vue-robust-table__input-wrapper {
-  position: relative;
+  bottom: 0;
+  left: -1px;
+  position: absolute;
+  right: 0;
+  top: -1px;
 }
 
 .vue-robust-table__input {
   background: $cell-input-bg;
   border: 0;
+  bottom: 0;
   box-shadow: 2px 2px 2px $shadow-color inset;
   font-size: 16px;
+  height: 100%;
   left: 0;
   line-height: 26px;
   padding: 4px 8px;
