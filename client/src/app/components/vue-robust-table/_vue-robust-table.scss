@@ -1,12 +1,22 @@
 
-$table-bg: #f4f4f7;
+$table-bg: #fff;
 $table-row-border: #373737;
 $cell-bg-hover: #cfe5f3;
+$cell-input-bg: #fbfbfb;
+$transparent: rgba(255, 255, 255, .00001);
+$shadow-color: rgba(0, 0, 0, .2);
+
+$white-color: #fff;
+$blue-color: #72cfeb;
+$blue-color-active: #58c7e8;
+$grey-color: #969696;
 
 .vue-robust-table {
   background: $table-bg;
   border-collapse: collapse;
+  box-shadow: 2px 2px 3px $shadow-color;
   display: table;
+  position: relative;
   width: 100%;
 }
 
@@ -14,14 +24,98 @@ $cell-bg-hover: #cfe5f3;
   display: table-row;
 }
 
+.vue-robust-table__row_header {
+  .vue-robust-table__cell_header-spacing {
+    border-bottom-color: $table-row-border;
+  }
+}
+
 .vue-robust-table__cell {
   border: 1px solid $table-row-border;
   cursor: pointer;
   display: table-cell;
+  height: 36px;
+  max-width: 0;
   padding: 8px 16px;
   transition: background 80ms;
+  user-select: none;
 
   &:hover {
     background: $cell-bg-hover;
+  }
+
+  &:focus {
+    background: $cell-bg-hover;
+    outline: none;
+  }
+}
+
+.vue-robust-table__cell_no-horizontal-borders {
+  border-left-color: $transparent;
+  border-right-color: $transparent;
+}
+
+.vue-robust-table__cell_no-vertical-borders {
+  border-bottom-color: $transparent;
+  border-top-color: $transparent;
+}
+
+.vue-robust-table__cell_no-borders {
+  border-color: $transparent;
+}
+
+.vue-robust-table__cell_editprocess {
+  padding: 0;
+}
+
+.vue-robust-table__input-wrapper {
+  position: relative;
+}
+
+.vue-robust-table__input {
+  background: $cell-input-bg;
+  border: 0;
+  box-shadow: 2px 2px 2px $shadow-color inset;
+  font-size: 16px;
+  left: 0;
+  line-height: 26px;
+  padding: 4px 8px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.vue-robust-table__add-row {
+  background: $grey-color;
+  border-radius: 50%;
+  bottom: -14px;
+  box-shadow: 2px 2px 2px $shadow-color;
+  cursor: pointer;
+  height: 30px;
+  left: -14px;
+  position: absolute;
+  width: 30px;
+
+  &:hover {
+    background: $blue-color-active;
+  }
+
+  &:before,
+  &:after {
+    background: $white-color;
+    content: '';
+    height: 12px;
+    left: 14px;
+    position: absolute;
+    top: 9px;
+    width: 2px;
+  }
+
+  &:after {
+    transform: rotate(90deg);
   }
 }
