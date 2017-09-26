@@ -66,7 +66,6 @@ export default Vue.component('vue-robust-table', {
       });
     },
     cellOnFocus(row_index, cell_index) {
-      console.log('focus');
       this.currentCell = this.rows[row_index].content[cell_index];
     },
     saveNewCellValue() {
@@ -82,6 +81,7 @@ export default Vue.component('vue-robust-table', {
     restoreOldCellValue() {
       this.currentCellInput.value = '';
       this.currentCell.editProcess = false;
+      this.currentCell.el.focus();
     },
     addTableRow() {
       console.log('add');
