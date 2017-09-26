@@ -31,7 +31,8 @@ export default Vue.component('vue-robust-table', {
   template,
   data() {
     return {
-
+      currentCell: null,
+      currentCellInput: null,
     }
   },
   computed: {
@@ -47,14 +48,28 @@ export default Vue.component('vue-robust-table', {
   methods: {
     editModeEnable(cell, row_index, cell_index) {
       console.log('enable edit mode');
-      let currentCell = this.rows[row_index].content[cell_index];
-      let currentInput = this.$refs[`cell-input-${row_index}-${cell_index}`];
+      this.currentCell = this.rows[row_index].content[cell_index];
+      this.currentCellInput = document.getElementById(`cell-input-${row_index}-${cell_index}`);
 
-      Vue.set(currentCell, 'editProcess', true);
+      Vue.set(this.currentCell, 'editProcess', true);
+      this.currentCellInput.value = this.currentCell.value;
       Vue.nextTick(() => {
-        currentInput[0].dispatchEvent(new Event('focus'));
-        console.log(currentInput);
+        this.currentCellInput.focus();
+        this.currentCellInput.select();
       });
+    },
+    saveNewCellValue() {
+      if (!this.currentCellInput.value) {
+        return;
+      }
+
+      this.currentCell.value = this.currentCellInput.value;
+      this.currentCellInput.value = '';
+      this.currentCell.editProcess = false;
+    },
+    restoreOldCellValue() {
+      this.currentCellInput.value = '';
+      this.currentCell.editProcess = false;
     }
   }
 });
