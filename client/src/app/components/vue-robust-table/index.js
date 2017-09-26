@@ -27,6 +27,10 @@ export default Vue.component('vue-robust-table', {
       type: Boolean,
       default: true
     },
+    rowsExtensible: {
+      type: Boolean,
+      default: true
+    },
   },
   template,
   data() {
@@ -46,17 +50,24 @@ export default Vue.component('vue-robust-table', {
     }
   },
   methods: {
-    editModeEnable(cell, row_index, cell_index) {
-      console.log('enable edit mode');
-      this.currentCell = this.rows[row_index].content[cell_index];
-      this.currentCellInput = document.getElementById(`cell-input-${row_index}-${cell_index}`);
+    editModeEnable(row_index, cell_index) {
+      console.log(this.currentCell.editProcess);
+      if (this.currentCell.editProcess) {
+        return;
+      }
 
+      this.currentCell.el = document.getElementById(`vue-robust-table__cell-${row_index}-${cell_index}`);
+      this.currentCellInput = document.getElementById(`cell-input-${row_index}-${cell_index}`);
       Vue.set(this.currentCell, 'editProcess', true);
       this.currentCellInput.value = this.currentCell.value;
       Vue.nextTick(() => {
         this.currentCellInput.focus();
         this.currentCellInput.select();
       });
+    },
+    cellOnFocus(row_index, cell_index) {
+      console.log('focus');
+      this.currentCell = this.rows[row_index].content[cell_index];
     },
     saveNewCellValue() {
       if (!this.currentCellInput.value) {
@@ -66,10 +77,29 @@ export default Vue.component('vue-robust-table', {
       this.currentCell.value = this.currentCellInput.value;
       this.currentCellInput.value = '';
       this.currentCell.editProcess = false;
+      this.currentCell.el.focus();
     },
     restoreOldCellValue() {
       this.currentCellInput.value = '';
       this.currentCell.editProcess = false;
+    },
+    addTableRow() {
+      console.log('add');
+      let emptyRow = this.createEmptyRow();
+      this.rows.push(emptyRow);
+    },
+    createEmptyRow() {
+      let emptyRow = JSON.parse(JSON.stringify(this.rows[this.rows.length - 1]));
+      emptyRow.state = 'default';
+      emptyRow.content.forEach((cell) => {
+        if (cell.title === 'id') {
+          cell.value = cell.value + 1;
+        } else {
+          cell.value = '';
+        }
+      });
+
+      return emptyRow;
     }
   }
 });

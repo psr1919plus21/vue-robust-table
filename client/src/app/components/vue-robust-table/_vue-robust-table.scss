@@ -6,12 +6,17 @@ $cell-input-bg: #fbfbfb;
 $transparent: rgba(255, 255, 255, .00001);
 $shadow-color: rgba(0, 0, 0, .2);
 
+$white-color: #fff;
+$blue-color: #72cfeb;
+$blue-color-active: #58c7e8;
+$grey-color: #969696;
 
 .vue-robust-table {
   background: $table-bg;
   border-collapse: collapse;
   box-shadow: 2px 2px 3px $shadow-color;
   display: table;
+  position: relative;
   width: 100%;
 }
 
@@ -35,6 +40,11 @@ $shadow-color: rgba(0, 0, 0, .2);
 
   &:hover {
     background: $cell-bg-hover;
+  }
+
+  &:focus {
+    background: $cell-bg-hover;
+    outline: none;
   }
 }
 
@@ -74,5 +84,36 @@ $shadow-color: rgba(0, 0, 0, .2);
 
   &:focus {
     outline: none;
+  }
+}
+
+.vue-robust-table__add-row {
+  background: $grey-color;
+  border-radius: 50%;
+  bottom: -14px;
+  box-shadow: 2px 2px 2px $shadow-color;
+  cursor: pointer;
+  height: 30px;
+  left: -14px;
+  position: absolute;
+  width: 30px;
+
+  &:hover {
+    background: $blue-color-active;
+  }
+
+  &:before,
+  &:after {
+    background: $white-color;
+    content: '';
+    height: 12px;
+    left: 14px;
+    position: absolute;
+    top: 9px;
+    width: 2px;
+  }
+
+  &:after {
+    transform: rotate(90deg);
   }
 }

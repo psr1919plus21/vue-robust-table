@@ -11,9 +11,12 @@ export const template = `
       <div class="vue-robust-table__row"
          v-for="(row, row_index) in rows">
           <div tabindex="1" class="vue-robust-table__cell"
+            :id="'vue-robust-table__cell-' + row_index + '-' + cell_index"
             :class="[cellModifyers, {'vue-robust-table__cell_editprocess': cell.editProcess}]"
             v-for="(cell, cell_index) in row.content"
-            @dblclick.left="editModeEnable(cell, row_index, cell_index)">
+            @dblclick.left="editModeEnable(row_index, cell_index)"
+            @focus="cellOnFocus(row_index, cell_index)"
+            @keyup.enter.self="editModeEnable(row_index, cell_index)">
             <div v-show="!cell.editProcess" class="vue-robust-table__value"
               v-text="cell.value"></div>
             <div v-show="cell.editProcess" class="vue-robust-table__input-wrapper">
@@ -28,5 +31,9 @@ export const template = `
 
           </div>
       </div>
+
+      <div v-if="rowsExtensible"
+        @click="addTableRow()"
+        class="vue-robust-table__add-row"></div>
     </div>
 `;
