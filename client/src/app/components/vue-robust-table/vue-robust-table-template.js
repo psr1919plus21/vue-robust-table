@@ -26,10 +26,10 @@ export const template = `
                 type="text"
                 class="vue-robust-table__input"
                 @keyup.enter="saveNewCellValue"
-
+                @blur="saveNewCellValue"
                 @keyup.esc="restoreOldCellValue">
             </div>
-<!-- @blur="saveNewCellValue" -->
+
           </div>
       </div>
 
