@@ -15,7 +15,12 @@
     <div class="vue-app-preload" id="app">
       <button @click="toggleHeader()">Toggle table header</button>
       <hr>
-      <vue-robust-table :rows="dataTableRows" :show-table-header="dataTableSettings.tableHeader"></vue-robust-table>
+      <vue-robust-table
+        :rows="dataTableRows"
+        :show-table-header="dataTableSettings.tableHeader"
+        :show-cells-borders="dataTableSettings.showCellsBorders">
+
+      </vue-robust-table>
     </div>
     {% endverbatim %}
   </center>

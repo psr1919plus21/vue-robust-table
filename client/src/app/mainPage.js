@@ -185,7 +185,7 @@ new Vue({
     ],
 
     dataTableSettings: {
-      tableHeader: true
+      tableHeader: true,
     }
   },
   methods: {
