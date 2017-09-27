@@ -11,7 +11,7 @@ export const template = `
       <div class="vue-robust-table__row"
          v-for="(row, row_index) in rows">
           <div tabindex="1" class="vue-robust-table__cell"
-            :id="'vue-robust-table__cell-' + row_index + '-' + cell_index"
+            :id="id + '-vue-robust-table__cell-' + row_index + '-' + cell_index"
             :class="[cellModifyers, {'vue-robust-table__cell_editprocess': cell.editProcess}]"
             v-for="(cell, cell_index) in row.content"
             @dblclick.left="editModeEnable(row_index, cell_index)"
@@ -22,7 +22,7 @@ export const template = `
               v-text="cell.value"></div>
             <div v-show="cell.editProcess" class="vue-robust-table__input-wrapper">
               <input
-                :id="'cell-input-' + row_index + '-' + cell_index"
+                :id="id + '-cell-input-' + row_index + '-' + cell_index"
                 type="text"
                 class="vue-robust-table__input"
                 @keyup.enter="saveNewCellValue"
