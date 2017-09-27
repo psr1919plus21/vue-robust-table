@@ -4,6 +4,9 @@ import {template} from './vue-robust-table-template';
 
 export default Vue.component('vue-robust-table', {
   props: {
+    id: {
+      required: true
+    },
     rows: {
       type: Array,
     },
@@ -56,8 +59,8 @@ export default Vue.component('vue-robust-table', {
         return;
       }
 
-      this.currentCell.el = document.getElementById(`vue-robust-table__cell-${row_index}-${cell_index}`);
-      this.currentCellInput = document.getElementById(`cell-input-${row_index}-${cell_index}`);
+      this.currentCell.el = document.getElementById(`${this.id}-vue-robust-table__cell-${row_index}-${cell_index}`);
+      this.currentCellInput = document.getElementById(`${this.id}-cell-input-${row_index}-${cell_index}`);
       Vue.set(this.currentCell, 'editProcess', true);
       this.currentCellInput.value = this.currentCell.value;
       Vue.nextTick(() => {

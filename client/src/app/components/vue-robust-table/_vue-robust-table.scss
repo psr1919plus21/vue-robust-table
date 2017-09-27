@@ -2,7 +2,7 @@
 $table-bg: #fff;
 $table-row-border: #373737;
 $cell-bg-hover: #cfe5f3;
-$cell-input-bg: #fbfbfb;
+$cell-input-bg: #eaeaea;
 $transparent: rgba(255, 255, 255, .00001);
 $shadow-color: rgba(0, 0, 0, .2);
 
@@ -15,13 +15,12 @@ $grey-color: #969696;
   background: $table-bg;
   border-collapse: collapse;
   box-shadow: 2px 2px 3px $shadow-color;
-  display: table;
   position: relative;
   width: 100%;
 }
 
 .vue-robust-table__row {
-  display: table-row;
+  display: flex;
 }
 
 .vue-robust-table__row_header {
@@ -31,11 +30,11 @@ $grey-color: #969696;
 }
 
 .vue-robust-table__cell {
+  align-items: center;
   border: 1px solid $table-row-border;
   cursor: pointer;
-  display: table-cell;
-  height: 36px;
-  max-width: 0;
+  display: flex;
+  flex: 1;
   overflow: hidden;
   padding: 8px 16px;
   position: relative;
@@ -91,7 +90,7 @@ $grey-color: #969696;
   height: 100%;
   left: 0;
   line-height: 26px;
-  padding: 4px 8px;
+  padding: 4px 16px;
   position: absolute;
   top: 0;
   width: 100%;
